@@ -13,12 +13,25 @@ Install build dependencies.
 sudo apt install libldap2-dev libpam0g-dev libcurl4-openssl-dev
 ```
 
+or on RHEL systems (tested on Rocky 8, CentOS 8 and RHEL 8)
+```bash
+sudo dnf install make gcc-c++ openldap-devel curl-devel pam-devel
+```
+
 Clone the repository, build and install the module.
 
 ```bash
 make
 sudo mkdir /lib/security
 sudo cp pam_oauth2_device.so /lib/security/
+```
+
+For RHEL or Rocky users you will need to install the module as follows.
+
+```bash
+make 
+sudo mkdir /lib64/security
+sudo cp pam_oauth2_device.so /lib64/security/
 ```
 
 Create a configuration file `/etc/pam_oauth2_device/config.json`.
