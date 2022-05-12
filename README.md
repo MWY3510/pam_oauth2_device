@@ -52,6 +52,7 @@ Edit `/etc/pam_oauth2_device/config.json`.
 - `oauth` configuration for the OIDC identity provider.
   - `require_mfa`: if `true` the module will modify the requests to ask
     user to perform the MFA.
+  - `token_user_gen`: if `true` the module will pull user information from the oauth token Userinfo: UID, GID, allowed hosts, admin or not. This will also create with the userinfo if one does not exist on the machine.
 
 ### Example Configuration for sshd
 
