@@ -2,10 +2,12 @@
 #define PAM_OAUTH2_DEVICE_HPP
 
 #include <string>
+#include <vector>
 
 class Userinfo {
  public:
   std::string sub, username, name, acr;
+  std::vector<std::string> login_servers, admin_servers;
 };
 
 class DeviceAuthResponse {
