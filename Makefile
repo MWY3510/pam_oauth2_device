@@ -11,6 +11,20 @@ objects = src/pam_oauth2_device.o \
 
 all: pam_oauth2_device.so
 
+build_rpm: 
+    rpmbuild ./
+
+build_deb:
+    debbuild ./
+
+install_with_tester: install
+    # Change PAM modules for pamtester so we can run pamtest
+	echo "TODO"
+
+install_rocky: pam_oauth2_device.so
+    install -D -t $(DESTDIR)$(PREFIX)/lib64/security pam_oauth2_device.so
+	install -m 600 -D config_template.json $(DESTDIR)$(PREFIX)/etc/pam_oauth2_device/config.json
+
 %.o: %.c %.h
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

@@ -1,7 +1,7 @@
 # Changelog
 
-## 0.1.0 (2021-08-25)
-
+## 1.0.0 (2022-07-18)
+* Added user auto creation based on provider
 
 ### Features
 
